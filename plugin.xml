@@ -56,31 +56,4 @@
             <source-file src="src/ios/lib/Util/openssl_wrapper.m" />
             <source-file src="src/ios/lib/Util/MD5DataSigner.m" />
         </platform>
-        <platform name="android">
-            <config-file parent="/*" target="res/xml/config.xml">
-                <preference name="partner" value="$partner" />
-                <preference name="seller" value="$seller" />
-                <preference name="private_key" value="$private_key" />
-                <feature name="Alipay">
-                    <param name="android-package" value="com.fami2u.plugin.alipay.alipayPlugin" />
-                </feature>
-            </config-file>
-            <config-file target="AndroidManifest.xml" parent="/manifest/application">
-                <activity android:name="com.alipay.sdk.app.H5PayActivity" android:configChanges="orientation|keyboardHidden|navigation" android:exported="false" android:screenOrientation="behind" android:windowSoftInputMode="adjustResize|stateHidden">
-                </activity>
-            </config-file>
-            <config-file target="AndroidManifest.xml" parent="/manifest">
-                <uses-permission android:name="android.permission.INTERNET" />
-                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-                <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-                <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-                <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            </config-file>
-            <source-file src="src/android/libs/alipaySDK.jar" target-dir="libs" />
-            <source-file src="src/android/alipayPlugin.java" target-dir="src/com/fami2u/plugin/alipay/" />
-            <source-file src="src/android/PayResult.java" target-dir="src/com/fami2u/plugin/alipay/" />
-            <source-file src="src/android/PayRun.java" target-dir="src/com/fami2u/plugin/alipay/" />
-            <source-file src="src/android/util/Base64.java" target-dir="src/com/fami2u/plugin/alipay/util/" />
-            <source-file src="src/android/util/SignUtils.java" target-dir="src/com/fami2u/plugin/alipay/util/" />
-        </platform>
     </plugin>
